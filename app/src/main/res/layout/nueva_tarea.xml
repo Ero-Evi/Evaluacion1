@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NuevaTarea">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Imagen representando la tarea -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="149dp"
+            android:layout_height="151dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Imagen de tarea"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_compass" />
+
+    <!-- Nombre de la tarea -->
+    <TextView
+        android:id="@+id/taskNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre de la tarea"
+        android:textSize="18sp"
+        android:paddingBottom="8dp"/>
+
+        <!-- Checkbox para marcar la tarea como importante -->
+        <EditText
+            android:id="@+id/taskNameInput"
+            android:layout_width="396dp"
+            android:layout_height="49dp"
+            android:hint="Introduce el nombre de la tarea" />
+
+        <CheckBox
+        android:id="@+id/checkbImportante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Tarea importante?"
+        android:paddingTop="16dp"/>
+
+    <!-- Selección de categoría (RadioButtons) -->
+    <TextView
+        android:id="@+id/categoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"/>
+
+    <RadioGroup
+        android:id="@+id/categoryRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/workCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trabajo"/>
+
+        <RadioButton
+            android:id="@+id/personalCategory"
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:text="Personal" />
+
+        <RadioButton
+            android:id="@+id/studyCategory"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Estudio" />
+
+        <RadioButton
+            android:id="@+id/otherCategory"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Otro" />
+    </RadioGroup>
+
+    <!-- Barra de progreso para representar el avance de la tarea -->
+    <TextView
+        android:id="@+id/progressLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Progreso"
+        android:textSize="18sp"
+        android:paddingTop="16dp"/>
+
+    <ProgressBar
+        android:id="@+id/PBTarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="50"
+        android:max="100"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- RatingBar para calificar la prioridad de la tarea -->
+    <TextView
+        android:id="@+id/priorityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prioridad"
+        android:textSize="18sp"
+        android:paddingTop="16dp"/>
+
+    <RatingBar
+        android:id="@+id/RBprioridad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="3"
+        android:stepSize="1"/>
+
+    <!-- Botones Guardar y Cancelar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp">
+
+        <!-- Botón Guardar -->
+        <Button
+            android:id="@+id/btnguardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar tarea"
+            android:layout_marginEnd="16dp"/>
+
+        <!-- Botón Cancelar -->
+        <Button
+            android:id="@+id/btncancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"/>
+    </LinearLayout>
+
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
